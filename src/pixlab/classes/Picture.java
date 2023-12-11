@@ -143,6 +143,22 @@ public class Picture extends SimplePicture
 	  zeroBlue();
   }
   
+  public void clearBlueOverValue(int value)
+  {
+	  Pixel[][] pixels = this.getPixels2D();
+	  
+	  for (Pixel[] rowArray : pixels)
+	  {
+		  for (Pixel pixelObj : rowArray)
+		  {
+			  if (pixelObj.getBlue() >= value)
+			  {
+				  pixelObj.setBlue(0);
+			  }
+		  }
+	  }
+  }
+  
   /** Method that mirrors the picture around a 
     * vertical mirror in the center of the picture
     * from left to right */

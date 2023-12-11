@@ -56,6 +56,14 @@ public class PictureTester
 	  beach.explore();
   }
   
+  public static void testClearBlueOverValue()
+  {
+	  Picture beach = new Picture("beach.jpg");
+	  beach.explore();
+	  beach.clearBlueOverValue(200);
+	  beach.explore();
+  }
+  
   /** Method to test mirrorVertical */
   public static void testMirrorVertical()
   {
@@ -100,9 +108,10 @@ public class PictureTester
     //testZeroBlue();
     //testZeroRed();
     //testZeroGreen();
-	  testKeepOnlyBlue();
-	  testKeepOnlyRed();
-	  testKeepOnlyGreen();
+	//testKeepOnlyBlue();
+	//testKeepOnlyRed();
+	//testKeepOnlyGreen();
+	  testClearBlueOverValue();
     //testKeepOnlyBlue();
     //testKeepOnlyRed();
     //testKeepOnlyGreen();
