@@ -99,15 +99,28 @@ public class Picture extends SimplePicture
     }
   }
   
-  /** Method to set the red to 0 */
   public void zeroRed()
   {
 	  Pixel[][] pixels = this.getPixels2D();
+	  
 	  for (Pixel[] rowArray : pixels)
 	  {
 		  for (Pixel pixelObj : rowArray)
 		  {
 			  pixelObj.setRed(0);
+		  }
+	  }
+  }
+  
+  public void zeroGreen()
+  {
+	  Pixel[][] pixels = this.getPixels2D();
+	  
+	  for (int row = 0; row < pixels.length; row++)
+	  {
+		  for (int col = 0; col < pixels[0].length; col++)
+		  {
+			  pixels[row][col].setGreen(0);
 		  }
 	  }
   }
