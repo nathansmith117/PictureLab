@@ -125,6 +125,24 @@ public class Picture extends SimplePicture
 	  }
   }
   
+  public void keepOnlyBlue()
+  {
+	  zeroRed();
+	  zeroGreen();
+  }
+  
+  public void keepOnlyRed()
+  {
+	  zeroBlue();
+	  zeroGreen();
+  }
+  
+  public void keepOnlyGreen()
+  {
+	  zeroRed();
+	  zeroBlue();
+  }
+  
   /** Method that mirrors the picture around a 
     * vertical mirror in the center of the picture
     * from left to right */

@@ -21,7 +21,7 @@ public class PictureTester
   public static void testZeroRed()
   {
 	  Picture beach = new Picture("beach.jpg");
-	  beach.explore();
+	  //beach.explore();
 	  beach.zeroRed();
 	  beach.explore();
   }
@@ -29,8 +29,30 @@ public class PictureTester
   public static void testZeroGreen()
   {
 	  Picture beach = new Picture("beach.jpg");
-	  beach.explore();
+	  //beach.explore();
 	  beach.zeroGreen();
+	  beach.explore();
+  }
+  
+  public static void testKeepOnlyBlue()
+  {
+	  Picture beach = new Picture("beach.jpg");
+	  beach.explore();
+	  beach.keepOnlyBlue();
+	  beach.explore();
+  }
+  
+  public static void testKeepOnlyRed()
+  {
+	  Picture beach = new Picture("beach.jpg");
+	  beach.keepOnlyRed();
+	  beach.explore();
+  }
+  
+  public static void testKeepOnlyGreen()
+  {
+	  Picture beach = new Picture("beach.jpg");
+	  beach.keepOnlyGreen();
 	  beach.explore();
   }
   
@@ -77,14 +99,17 @@ public class PictureTester
     // to run
     //testZeroBlue();
     //testZeroRed();
-    testZeroGreen();
+    //testZeroGreen();
+	  testKeepOnlyBlue();
+	  testKeepOnlyRed();
+	  testKeepOnlyGreen();
     //testKeepOnlyBlue();
     //testKeepOnlyRed();
     //testKeepOnlyGreen();
     //testNegate();
     //testGrayscale();
     //testFixUnderwater();
-    testMirrorVertical();
+    //testMirrorVertical();
     //testMirrorTemple();
     //testMirrorArms();
     //testMirrorGull();
