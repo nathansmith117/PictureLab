@@ -159,6 +159,21 @@ public class Picture extends SimplePicture
 	  }
   }
   
+  public void mirrorDiagonal()
+  {
+	  Pixel[][] pixels = this.getPixels2D();
+	  
+	  for (int row = 0; row < pixels.length / 2; row++)
+	  {
+		  for (int col = 0; col < pixels[0].length / 2; col++)
+		  {
+			  Pixel upperPixel = pixels[row][col];
+			  Pixel lowerPixel = pixels[row - 1 - pixels.length][col - 1 - pixels[0].length];
+			  lowerPixel.setColor(upperPixel.getColor());
+		  }
+	  }
+  }
+  
   /** Method that mirrors the picture around a 
     * vertical mirror in the center of the picture
     * from left to right */

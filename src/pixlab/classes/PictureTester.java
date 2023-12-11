@@ -111,7 +111,7 @@ public class PictureTester
 	//testKeepOnlyBlue();
 	//testKeepOnlyRed();
 	//testKeepOnlyGreen();
-	  testClearBlueOverValue();
+	//testClearBlueOverValue();
     //testKeepOnlyBlue();
     //testKeepOnlyRed();
     //testKeepOnlyGreen();
