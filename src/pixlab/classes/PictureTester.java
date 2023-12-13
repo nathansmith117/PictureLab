@@ -87,6 +87,13 @@ public class PictureTester
 	  motorCycle.explore();
   }
   
+  public static void testColorShift()
+  {
+	  Picture motorCycle = new Picture("blueMotorCycle.jpg");
+	  motorCycle.shiftRed(10);
+	  motorCycle.explore();
+  }
+  
   /** Method to test mirrorVertical */
   public static void testMirrorVertical()
   {
@@ -141,7 +148,8 @@ public class PictureTester
 	//testMirrorDiagonal();
     //testNegate();
 	  testLowerBitDepth();
-	  testAverageColors();
+	  testColorShift();
+	  //testAverageColors();
     //testGrayscale();
     //testFixUnderwater();
     //testMirrorVertical();
