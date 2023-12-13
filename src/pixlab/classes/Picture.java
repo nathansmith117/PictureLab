@@ -181,6 +181,31 @@ public class Picture extends SimplePicture
 	  }
   }
   
+  public void lowerBitDepth()
+  {
+	  double scalar = Math.pow(2.0, 2.0) / Math.pow(2.0, 8.0);
+	  
+	  Pixel[][] pixels = this.getPixels2D();
+	  
+	  for (Pixel[] rowArray : pixels)
+	  {
+		  for (Pixel pixelObj : rowArray)
+		  {
+			  int blue = (int)(pixelObj.getBlue() * scalar);
+			  int green = (int)(pixelObj.getGreen() * scalar);
+			  int red = (int)(pixelObj.getRed() * scalar);
+			  
+			  blue /= scalar;
+			  green /= scalar;
+			  red /= scalar;
+			  
+			  pixelObj.setBlue(blue);
+			  pixelObj.setGreen(green);
+			  pixelObj.setRed(red);
+		  }
+	  }
+  }
+  
   /** Method that mirrors the picture around a 
     * vertical mirror in the center of the picture
     * from left to right */

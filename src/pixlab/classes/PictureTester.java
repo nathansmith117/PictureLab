@@ -71,6 +71,14 @@ public class PictureTester
 	  caterpillar.explore();
   }
   
+  public static void testConvertTo12bit()
+  {
+	  Picture motorCycle = new Picture("blueMotorCycle.jpg");
+	  motorCycle.explore();
+	  motorCycle.lowerBitDepth();
+	  motorCycle.explore();
+  }
+  
   /** Method to test mirrorVertical */
   public static void testMirrorVertical()
   {
@@ -122,8 +130,9 @@ public class PictureTester
     //testKeepOnlyBlue();
     //testKeepOnlyRed();
     //testKeepOnlyGreen();
-	  testMirrorDiagonal();
+	//testMirrorDiagonal();
     //testNegate();
+	  testConvertTo12bit();
     //testGrayscale();
     //testFixUnderwater();
     //testMirrorVertical();
