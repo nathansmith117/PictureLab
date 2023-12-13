@@ -75,6 +75,7 @@ public class PictureTester
   {
 	  Picture motorCycle = new Picture("blueMotorCycle.jpg");
 	  motorCycle.explore();
+	  //motorCycle.edgeDetectionHighlight(50);
 	  motorCycle.lowerBitDepth();
 	  motorCycle.explore();
   }
