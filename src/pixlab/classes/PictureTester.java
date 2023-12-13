@@ -67,6 +67,7 @@ public class PictureTester
   public static void testMirrorDiagonal()
   {
 	  Picture caterpillar = new Picture("caterpillar.jpg");
+	  caterpillar.explore();
 	  caterpillar.mirrorDiagonal();
 	  caterpillar.explore();
   }
@@ -148,10 +149,10 @@ public class PictureTester
     //testKeepOnlyBlue();
     //testKeepOnlyRed();
     //testKeepOnlyGreen();
-	//testMirrorDiagonal();
+	testMirrorDiagonal();
     //testNegate();
-	  testLowerBitDepth();
-	  testColorShift();
+	  //testLowerBitDepth();
+	  //testColorShift();
 	  //testAverageColors();
     //testGrayscale();
     //testFixUnderwater();
