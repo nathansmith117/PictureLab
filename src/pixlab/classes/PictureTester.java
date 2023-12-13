@@ -91,9 +91,9 @@ public class PictureTester
   {
 	  Picture motorCycle = new Picture("blueMotorCycle.jpg");
 	  motorCycle.lowerBitDepth();
-	  //motorCycle.shiftRed(10);
-	  motorCycle.shiftGreen(10);
-	  //motorCycle.shiftBlue(10);
+	  motorCycle.shiftRed(5);
+	  //motorCycle.shiftGreen(5);
+	  motorCycle.shiftBlue(10);
 	  motorCycle.explore();
   }
   
