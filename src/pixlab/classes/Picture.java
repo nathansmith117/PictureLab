@@ -229,6 +229,30 @@ public class Picture extends SimplePicture
     }
   }
   
+  public void averageColors()
+  {
+	  Pixel[][] pixels = this.getPixels2D();
+	  int sum = 0;
+	  
+	  for (Pixel[] rowArray : pixels)
+	  {
+		  for (Pixel pixelObj : rowArray)
+		  {
+			  sum += pixelObj.getColor().getRGB();
+		  }
+	  }
+	  
+	  int average = sum / (pixels.length * pixels[0].length);
+	  
+	  for (Pixel[] rowArray : pixels)
+	  {
+		  for (Pixel pixelObj : rowArray)
+		  {
+			  pixelObj.setColor(new Color(average));
+		  }
+	  }
+  }
+  
   /** Method that mirrors the picture around a 
     * vertical mirror in the center of the picture
     * from left to right */

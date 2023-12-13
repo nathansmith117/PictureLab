@@ -71,12 +71,19 @@ public class PictureTester
 	  caterpillar.explore();
   }
   
-  public static void testConvertTo12bit()
+  public static void testLowerBitDepth()
   {
 	  Picture motorCycle = new Picture("blueMotorCycle.jpg");
 	  motorCycle.explore();
 	  //motorCycle.edgeDetectionHighlight(50);
 	  motorCycle.lowerBitDepth();
+	  motorCycle.explore();
+  }
+  
+  public static void testAverageColors()
+  {
+	  Picture motorCycle = new Picture("blueMotorCycle.jpg");
+	  motorCycle.averageColors();
 	  motorCycle.explore();
   }
   
@@ -133,7 +140,8 @@ public class PictureTester
     //testKeepOnlyGreen();
 	//testMirrorDiagonal();
     //testNegate();
-	  testConvertTo12bit();
+	  testLowerBitDepth();
+	  testAverageColors();
     //testGrayscale();
     //testFixUnderwater();
     //testMirrorVertical();
