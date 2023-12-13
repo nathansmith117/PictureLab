@@ -251,6 +251,50 @@ public class Picture extends SimplePicture
 	  }
   }
   
+  public void shiftGreen(int shift)
+  {
+	  Pixel[][] pixels = this.getPixels2D();
+	  Picture copy = new Picture(this);
+	  Pixel[][] copiedPixels = copy.getPixels2D();
+	  
+	  int width = pixels[0].length;
+	  
+	  for (int row = 0; row < pixels.length; row++)
+	  {
+		  for (int col = 0; col < width; col++)
+		  {
+			  int shiftedCol = Math.abs(col + shift) % width;
+			  
+			  Pixel source = copiedPixels[row][col];
+			  Pixel destination = pixels[row][shiftedCol];
+			  
+			  destination.setGreen(source.getGreen());
+		  }
+	  }
+  }
+  
+  public void shiftBlue(int shift)
+  {
+	  Pixel[][] pixels = this.getPixels2D();
+	  Picture copy = new Picture(this);
+	  Pixel[][] copiedPixels = copy.getPixels2D();
+	  
+	  int width = pixels[0].length;
+	  
+	  for (int row = 0; row < pixels.length; row++)
+	  {
+		  for (int col = 0; col < width; col++)
+		  {
+			  int shiftedCol = Math.abs(col + shift) % width;
+			  
+			  Pixel source = copiedPixels[row][col];
+			  Pixel destination = pixels[row][shiftedCol];
+			  
+			  destination.setBlue(source.getBlue());
+		  }
+	  }
+  }
+  
   public void averageColors()
   {
 	  Pixel[][] pixels = this.getPixels2D();

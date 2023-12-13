@@ -90,7 +90,10 @@ public class PictureTester
   public static void testColorShift()
   {
 	  Picture motorCycle = new Picture("blueMotorCycle.jpg");
-	  motorCycle.shiftRed(10);
+	  motorCycle.lowerBitDepth();
+	  //motorCycle.shiftRed(10);
+	  motorCycle.shiftGreen(10);
+	  //motorCycle.shiftBlue(10);
 	  motorCycle.explore();
   }
   
