@@ -204,27 +204,63 @@ public class Picture extends SimplePicture
 	  }
   }
   
-  public void edgeDetectionHighlight(int edgeDist)
+  public void edgeDetectionHighlight(int edgeDist, int sampleSize, Color highlightColor)
   {
-    Pixel leftPixel = null;
-    Pixel rightPixel = null;
-    Pixel[][] pixels = this.getPixels2D();
-    Color rightColor = null;
-    
-    for (int row = 0; row < pixels.length; row++)
-    {
-      for (int col = 0; 
-           col < pixels[0].length-1; col++)
-      {
-        leftPixel = pixels[row][col];
-        rightPixel = pixels[row][col+1];
-        rightColor = rightPixel.getColor();
-        
-        if (leftPixel.colorDistance(rightColor) > 
-            edgeDist)
-          leftPixel.setColor(Color.BLACK);
-      }
-    }
+	 
+	  Pixel[][] pixels = this.getPixels2D();
+	  Pixel[][] pixelsCopy = new Picture(this).getPixels2D();
+	  
+	  for (int row = 0; row < pixels.length; row++)
+	  {
+		  for (int col = 0; col < pixels[0].length; col++)
+		  {
+			  int[] positions = {-sampleSize, 0, sampleSize};
+			  int redSum = 0;
+			  int greenSum = 0;
+			  int blueSum = 0;
+			  int colorCount = 0;
+			  
+			  for (int y : positions)
+			  {
+				  for (int x : positions)
+				  {
+					  if (x == 0 && y == 0)
+					  {
+						  continue;
+					  }
+					  
+					  int currentRow = row + y;
+					  int currentCol = col + x;
+					  
+					  // Bounds check then sum.
+					  if (currentRow >= 0 && currentRow < pixels.length
+							  && currentCol >= 0 && currentCol < pixels[0].length)
+					  {
+						  Color currentColor = pixelsCopy[currentRow][currentCol].getColor();
+						  redSum += currentColor.getRed();
+						  greenSum += currentColor.getGreen();
+						  blueSum += currentColor.getBlue();
+						  colorCount++;
+					  }
+				  }
+			  }
+			  
+			  redSum /= colorCount;
+			  greenSum /= colorCount;
+			  blueSum /= colorCount;
+			  
+			  Color colorAverage = new Color(redSum, greenSum, blueSum);
+			  
+			  if (pixelsCopy[row][col].colorDistance(colorAverage) > edgeDist)
+			  {
+				  pixels[row][col].setColor(highlightColor);
+			  }
+			  else
+			  {
+				  pixels[row][col].setColor(Color.white);
+			  }
+		  }
+	  }
   }
   
   public void shiftRed(int shift)

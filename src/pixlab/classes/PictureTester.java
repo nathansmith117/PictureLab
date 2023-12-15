@@ -1,4 +1,7 @@
 package pixlab.classes;
+
+import java.awt.Color;
+
 /**
  * This class contains class (static) methods
  * that will help you test the Picture class 
@@ -76,9 +79,16 @@ public class PictureTester
   {
 	  Picture motorCycle = new Picture("blueMotorCycle.jpg");
 	  motorCycle.explore();
-	  //motorCycle.edgeDetectionHighlight(50);
 	  motorCycle.lowerBitDepth();
 	  motorCycle.explore();
+  }
+  
+  public static void testEdgeDetectionHighlight()
+  {
+	  Picture swan = new Picture("swan.jpg");
+	  swan.explore();
+	  swan.edgeDetectionHighlight(10, 2, Color.blue);
+	  swan.explore();
   }
   
   public static void testAverageColors()
@@ -149,9 +159,11 @@ public class PictureTester
     //testKeepOnlyBlue();
     //testKeepOnlyRed();
     //testKeepOnlyGreen();
-	testMirrorDiagonal();
+	//testMirrorDiagonal();
     //testNegate();
 	  //testLowerBitDepth();
+	  testEdgeDetectionHighlight();
+	  testEdgeDetection();
 	  //testColorShift();
 	  //testAverageColors();
     //testGrayscale();
