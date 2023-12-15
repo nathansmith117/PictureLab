@@ -87,7 +87,7 @@ public class PictureTester
   {
 	  Picture swan = new Picture("swan.jpg");
 	  swan.explore();
-	  swan.edgeDetectionHighlight(10, 2, Color.blue);
+	  swan.edgeDetectionHighlight(10, 1, Color.blue);
 	  swan.explore();
   }
   
