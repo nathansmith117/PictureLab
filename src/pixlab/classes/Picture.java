@@ -361,6 +361,23 @@ public class Picture extends SimplePicture
 	  }
   }
   
+  public void chromakey(Picture picture, Color color, double distance)
+  {
+	  Pixel[][] pixels = this.getPixels2D();
+	  Pixel[][] pixels2 = picture.getPixels2D();
+	  
+	  for (int y = 0; y < pixels.length; y++)
+	  {
+		  for (int x = 0; x < pixels[0].length; x++)
+		  {
+			  if (pixels[y][x].colorDistance(color) <= distance)
+			  {
+				  pixels[y][x].setColor(pixels2[y % pixels2.length][x % pixels2[0].length].getColor());  
+			  }
+		  }
+	  }
+  }
+  
   /** Method that mirrors the picture around a 
     * vertical mirror in the center of the picture
     * from left to right */

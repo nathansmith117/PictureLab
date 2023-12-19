@@ -115,10 +115,21 @@ public class PictureTester
 	  pupper.explore();
   }
   
+  public static void testChromakey()
+  {
+	  Picture blue = new Picture("blue-mark.jpg");
+	  Picture moon = new Picture("moon-surface.jpg");
+	  
+	  blue.explore();
+	  blue.chromakey(moon, new Color(8, 37, 77), 50);
+	  blue.explore();
+  }
+  
   /** Method to test mirrorVertical */
   public static void testMirrorVertical()
   {
     Picture caterpillar = new Picture("caterpillar.jpg");
+    
     caterpillar.explore();
     caterpillar.mirrorVertical();
     caterpillar.explore();
@@ -171,7 +182,8 @@ public class PictureTester
 	  //testLowerBitDepth();
 	  //testEdgeDetectionHighlight();
 	  //testEdgeDetection();
-	  testCaption();
+	  //testCaption();
+	  testChromakey();
 	  //testColorShift();
 	  //testAverageColors();
     //testGrayscale();
