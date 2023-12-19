@@ -108,17 +108,10 @@ public class PictureTester
 	  motorCycle.explore();
   }
   
-  public static void testColorfulMessage()
-  {
-	  Picture gorge = new Picture("gorge.jpg");
-	  gorge.addColorfulMessage("Not a meme", 10, 10);
-	  gorge.explore();
-  }
-  
   public static void testCaption()
   {
-	  Picture pupper = new Picture("annie.jpg");
-	  pupper.captionPicture("Cute cute doggo lol");
+	  Picture pupper = new Picture("koala.jpg");
+	  pupper.captionPicture("Bite my furry ass stupid");
 	  pupper.explore();
   }
   
@@ -178,7 +171,6 @@ public class PictureTester
 	  //testLowerBitDepth();
 	  //testEdgeDetectionHighlight();
 	  //testEdgeDetection();
-	  testColorfulMessage();
 	  testCaption();
 	  //testColorShift();
 	  //testAverageColors();

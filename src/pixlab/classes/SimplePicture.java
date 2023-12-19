@@ -539,14 +539,12 @@ public class SimplePicture implements DigitalPicture
 	 graphics.drawString(message, xPos, yPos);
  }
  
- public void addColorfulMessage(String message, int xPos, int yPos)
+ public void addColorfulMessage(String message, int xPos, int yPos, int gap)
  {
 	 Color[] colors = {Color.BLACK, Color.GREEN, Color.PINK, Color.MAGENTA, Color.BLUE, Color.RED, Color.ORANGE};
 	 
-	 int shift = 20;
-	 
 	 Graphics2D graphics = bufferedImage.createGraphics();
-	 graphics.setFont(new Font("Helvetica", Font.BOLD, 20));
+	 graphics.setFont(new Font("Helvetica", Font.BOLD, gap * 15));
 	 
 	 for (int index = 0; index < message.length(); index++)
 	 {
@@ -554,7 +552,7 @@ public class SimplePicture implements DigitalPicture
 		 Color randomColor = colors[randomIndex];
 		 graphics.setPaint(randomColor);
 		 graphics.drawString(message.substring(index, index + 1), xPos, yPos);
-		 xPos += shift;
+		 xPos += gap * 10;
 	 }
  }
  

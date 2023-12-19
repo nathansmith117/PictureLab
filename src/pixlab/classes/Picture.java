@@ -265,10 +265,10 @@ public class Picture extends SimplePicture
   
   public void captionPicture(String caption)
   {
-	  int row = (int)(this.getHeight() * 0.8);
-	  int column = (int)(this.getWidth() * 0.2);
+	  int row = (int)(this.getHeight() * 0.1);
+	  int column = (int)(this.getWidth() * 0.0);
 	  
-	  addColorfulMessage(caption, column, row);
+	  addColorfulMessage(caption, column, row, 2);
   }
   
   public void shiftRed(int shift)
