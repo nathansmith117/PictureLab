@@ -108,6 +108,13 @@ public class PictureTester
 	  motorCycle.explore();
   }
   
+  public static void testColorfulMessage()
+  {
+	  Picture gorge = new Picture("gorge.jpg");
+	  gorge.addColorfulMessage("Not a meme", 10, 10);
+	  gorge.explore();
+  }
+  
   /** Method to test mirrorVertical */
   public static void testMirrorVertical()
   {
@@ -162,8 +169,9 @@ public class PictureTester
 	//testMirrorDiagonal();
     //testNegate();
 	  //testLowerBitDepth();
-	  testEdgeDetectionHighlight();
-	  testEdgeDetection();
+	  //testEdgeDetectionHighlight();
+	  //testEdgeDetection();
+	  testColorfulMessage();
 	  //testColorShift();
 	  //testAverageColors();
     //testGrayscale();

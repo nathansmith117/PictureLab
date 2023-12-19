@@ -539,6 +539,25 @@ public class SimplePicture implements DigitalPicture
 	 graphics.drawString(message, xPos, yPos);
  }
  
+ public void addColorfulMessage(String message, int xPos, int yPos)
+ {
+	 Color[] colors = {Color.BLACK, Color.GREEN, Color.PINK, Color.MAGENTA, Color.BLUE, Color.RED, Color.ORANGE};
+	 
+	 int shift = message.length() / 10;
+	 
+	 Graphics2D graphics = bufferedImage.createGraphics();
+	 graphics.setFont(new Font("Helvetica", Font.BOLD, 10));
+	 
+	 for (int index = 0; index < message.length(); index++)
+	 {
+		 int randomIndex = (int)(Math.random() * colors.length);
+		 Color randomColor = colors[randomIndex];
+		 graphics.setPaint(randomColor);
+		 graphics.drawString(message, xPos, yPos);
+		 xPos += shift;
+	 }
+ }
+ 
  /**
   * Method to draw a string at the given location on the picture
   * @param text the text to draw
