@@ -379,22 +379,25 @@ public class Picture extends SimplePicture
   }
   
   public void sortColors()
-  {
-	  Pixel[] pixels = this.getPixels();
-	  
-	  for (int outer = 1; outer < pixels.length; outer++)
+  {  
+	  for (int row = 0; row < this.getPixels2D().length; row++)
 	  {
-		  Pixel tested = pixels[outer];
-		  
-		  int inner = outer - 1;
-		  
-		  while (inner >= 0 && tested.getColorMagnitude() < pixels[inner].getColorMagnitude())
+		  Pixel[] pixels = this.getPixels2D()[row];
+	  
+		  for (int outer = 1; outer < pixels.length; outer++)
 		  {
-			  pixels[inner + 1].setColor(pixels[inner].getColor());
-			  inner--;
+			  Pixel tested = pixels[outer];
+			  
+			  int inner = outer - 1;
+			  
+			  while (inner >= 0 && tested.getColorMagnitude() < pixels[inner].getColorMagnitude())
+			  {
+				  pixels[inner + 1].setColor(pixels[inner].getColor());
+				  inner--;
+			  }
+			  
+			  pixels[inner + 1].setColor(tested.getColor());
 		  }
-		  
-		  pixels[inner + 1].setColor(tested.getColor());
 	  }
   }
   
