@@ -343,6 +343,15 @@ public class Pixel
    return distance;
  }
  
+ public double getColorMagnitude()
+ {
+	 double magnitude = Math.sqrt((double)(getRed() * getRed()) + 
+			 (double)(getGreen() * getGreen()) + 
+			 (double)(getBlue() * getBlue()));
+	 
+	 return magnitude;
+ }
+ 
  /**
   * Method to get the average of the colors of this pixel
   * @return the average of the red, green, and blue values

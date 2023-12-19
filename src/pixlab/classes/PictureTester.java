@@ -126,6 +126,14 @@ public class PictureTester
 	  me.explore();
   }
   
+  public static void testSortColors()
+  {
+	  Picture arch = new Picture("arch.jpg");
+	  arch.explore();
+	  arch.sortColors();
+	  arch.explore();
+  }
+  
   /** Method to test mirrorVertical */
   public static void testMirrorVertical()
   {
@@ -184,7 +192,8 @@ public class PictureTester
 	  //testEdgeDetectionHighlight();
 	  //testEdgeDetection();
 	  //testCaption();
-	  testChromakey();
+	  //testChromakey();
+	  testSortColors();
 	  //testColorShift();
 	  //testAverageColors();
     //testGrayscale();

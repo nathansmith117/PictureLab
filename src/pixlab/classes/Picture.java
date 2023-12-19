@@ -378,6 +378,26 @@ public class Picture extends SimplePicture
 	  }
   }
   
+  public void sortColors()
+  {
+	  Pixel[] pixels = this.getPixels();
+	  
+	  for (int outer = 1; outer < pixels.length; outer++)
+	  {
+		  Pixel tested = pixels[outer];
+		  
+		  int inner = outer - 1;
+		  
+		  while (inner >= 0 && tested.getColorMagnitude() < pixels[inner].getColorMagnitude())
+		  {
+			  pixels[inner + 1].setColor(pixels[inner].getColor());
+			  inner--;
+		  }
+		  
+		  pixels[inner + 1].setColor(tested.getColor());
+	  }
+  }
+  
   /** Method that mirrors the picture around a 
     * vertical mirror in the center of the picture
     * from left to right */
