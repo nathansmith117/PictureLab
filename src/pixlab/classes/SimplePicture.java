@@ -530,6 +530,15 @@ public class SimplePicture implements DigitalPicture
    
  }
  
+ public void addMessage(String message, int xPos, int yPos, Color textColor)
+ {
+	 Graphics2D graphics = bufferedImage.createGraphics();
+	 
+	 graphics.setPaint(textColor);
+	 graphics.setFont(new Font("Courier New", Font.BOLD, 14));
+	 graphics.drawString(message, xPos, yPos);
+ }
+ 
  /**
   * Method to draw a string at the given location on the picture
   * @param text the text to draw
