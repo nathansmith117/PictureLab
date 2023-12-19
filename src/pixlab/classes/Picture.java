@@ -263,6 +263,14 @@ public class Picture extends SimplePicture
 	  }
   }
   
+  public void captionPicture(String caption)
+  {
+	  int row = (int)(this.getHeight() * 0.8);
+	  int column = (int)(this.getWidth() * 0.2);
+	  
+	  addColorfulMessage(caption, column, row);
+  }
+  
   public void shiftRed(int shift)
   {
 	  Pixel[][] pixels = this.getPixels2D();

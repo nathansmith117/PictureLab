@@ -543,17 +543,17 @@ public class SimplePicture implements DigitalPicture
  {
 	 Color[] colors = {Color.BLACK, Color.GREEN, Color.PINK, Color.MAGENTA, Color.BLUE, Color.RED, Color.ORANGE};
 	 
-	 int shift = message.length() / 10;
+	 int shift = 20;
 	 
 	 Graphics2D graphics = bufferedImage.createGraphics();
-	 graphics.setFont(new Font("Helvetica", Font.BOLD, 10));
+	 graphics.setFont(new Font("Helvetica", Font.BOLD, 20));
 	 
 	 for (int index = 0; index < message.length(); index++)
 	 {
 		 int randomIndex = (int)(Math.random() * colors.length);
 		 Color randomColor = colors[randomIndex];
 		 graphics.setPaint(randomColor);
-		 graphics.drawString(message, xPos, yPos);
+		 graphics.drawString(message.substring(index, index + 1), xPos, yPos);
 		 xPos += shift;
 	 }
  }

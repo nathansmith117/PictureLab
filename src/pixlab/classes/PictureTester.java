@@ -115,6 +115,13 @@ public class PictureTester
 	  gorge.explore();
   }
   
+  public static void testCaption()
+  {
+	  Picture pupper = new Picture("annie.jpg");
+	  pupper.captionPicture("Cute cute doggo lol");
+	  pupper.explore();
+  }
+  
   /** Method to test mirrorVertical */
   public static void testMirrorVertical()
   {
@@ -172,6 +179,7 @@ public class PictureTester
 	  //testEdgeDetectionHighlight();
 	  //testEdgeDetection();
 	  testColorfulMessage();
+	  testCaption();
 	  //testColorShift();
 	  //testAverageColors();
     //testGrayscale();
