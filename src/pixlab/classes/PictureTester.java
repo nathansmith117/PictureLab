@@ -117,12 +117,13 @@ public class PictureTester
   
   public static void testChromakey()
   {
-	  Picture blue = new Picture("blue-mark.jpg");
+	  Picture me = new Picture("me.jpg");
 	  Picture moon = new Picture("moon-surface.jpg");
 	  
-	  blue.explore();
-	  blue.chromakey(moon, new Color(8, 37, 77), 50);
-	  blue.explore();
+	  me.explore();
+	  me.chromakey(moon, new Color(189, 180, 163), 25);
+	  me.lowerBitDepth();
+	  me.explore();
   }
   
   /** Method to test mirrorVertical */
