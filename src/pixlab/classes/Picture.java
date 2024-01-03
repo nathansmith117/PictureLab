@@ -179,9 +179,9 @@ public class Picture extends SimplePicture
 	  }
   }
   
-  public void lowerBitDepth()
+  public void lowerBitDepth(int bitDepth)
   {
-	  double scalar = Math.pow(2.0, 2.0) / Math.pow(2.0, 8.0);
+	  double scalar = Math.pow(bitDepth, 2.0) / Math.pow(2.0, 8.0);
 	  
 	  Pixel[][] pixels = this.getPixels2D();
 	  

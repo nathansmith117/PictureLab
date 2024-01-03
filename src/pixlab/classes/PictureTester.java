@@ -79,7 +79,7 @@ public class PictureTester
   {
 	  Picture motorCycle = new Picture("blueMotorCycle.jpg");
 	  motorCycle.explore();
-	  motorCycle.lowerBitDepth();
+	  motorCycle.lowerBitDepth(2);
 	  motorCycle.explore();
   }
   
@@ -101,7 +101,7 @@ public class PictureTester
   public static void testColorShift()
   {
 	  Picture motorCycle = new Picture("blueMotorCycle.jpg");
-	  motorCycle.lowerBitDepth();
+	  motorCycle.lowerBitDepth(2);
 	  motorCycle.shiftRed(5);
 	  //motorCycle.shiftGreen(5);
 	  motorCycle.shiftBlue(10);
@@ -122,7 +122,7 @@ public class PictureTester
 	  
 	  me.explore();
 	  me.chromakey(moon, new Color(189, 180, 163), 25);
-	  me.lowerBitDepth();
+	  me.lowerBitDepth(2);
 	  me.explore();
   }
   
@@ -212,15 +212,15 @@ public class PictureTester
 	//testKeepOnlyGreen();
 	//testMirrorDiagonal();
 	//testNegate();
-    //testLowerBitDepth();
+    testLowerBitDepth();
     //testEdgeDetectionHighlight();
     //testEdgeDetection();
     //testCaption();
     //testChromakey();
     //testSortColors();
     //testColorShift();
-	  //testSetColumnToAverageColor();
-	  testGreyScaleWithColorPop();
+	//testSetColumnToAverageColor();
+	//testGreyScaleWithColorPop();
 	//testAverageColors();
     //testGrayscale();
     //testFixUnderwater();
