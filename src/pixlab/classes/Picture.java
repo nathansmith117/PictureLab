@@ -163,8 +163,6 @@ public class Picture extends SimplePicture
   {
 	  Pixel[][] pixels = this.getPixels2D();
 	  
-	  
-	  
 	  for (int row = 0; row < pixels.length; row++)
 	  {
 		  for (int col = 0; col < row; col++)
