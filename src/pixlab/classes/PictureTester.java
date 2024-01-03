@@ -191,6 +191,8 @@ public class PictureTester
 	  kitten.explore();
 	  kitten.greyScaleWithColorPop(100, 225, 140);
 	  kitten.explore();
+	  kitten.greyScaleWithColorPop(0, 0, 0);
+	  kitten.explore();
   }
   
   /** Main method for testing.  Every class can have a main
@@ -210,7 +212,7 @@ public class PictureTester
 	//testKeepOnlyBlue();
 	//testKeepOnlyRed();
 	//testKeepOnlyGreen();
-	testMirrorDiagonal();
+	//testMirrorDiagonal();
 	//testNegate();
     //testLowerBitDepth();
     //testEdgeDetectionHighlight();
@@ -220,7 +222,7 @@ public class PictureTester
     //testSortColors();
     //testColorShift();
 	//testSetColumnToAverageColor();
-	//testGreyScaleWithColorPop();
+	testGreyScaleWithColorPop();
 	//testAverageColors();
     //testGrayscale();
     //testFixUnderwater();
