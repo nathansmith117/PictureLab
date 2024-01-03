@@ -430,6 +430,25 @@ public class Picture extends SimplePicture
 	  }
   }
   
+  public void greyScaleWithColorPop(int popRadius, int popX, int popY)
+  {
+	  Pixel[][] pixels = this.getPixels2D();
+	  
+	  for (int row = 0; row < pixels.length; row++)
+	  {
+		  for (int col = 0; col < pixels[0].length; col++)
+		  {
+			  // Set to gray if outside of the color pop.
+			  if (Math.hypot(popX - col, popY - row) > popRadius)
+			  {
+				  Color color = pixels[row][col].getColor();
+				  int shade = (color.getRed() + color.getGreen() + color.getBlue()) / 3;
+				  pixels[row][col].setColor(new Color(shade, shade, shade));
+			  }
+		  }
+	  }
+  }
+  
   /** Method that mirrors the picture around a 
     * vertical mirror in the center of the picture
     * from left to right */

@@ -185,6 +185,14 @@ public class PictureTester
 	  gorge.explore();
   }
   
+  public static void testGreyScaleWithColorPop()
+  {
+	  Picture kitten = new Picture("kitten2.jpg");
+	  kitten.explore();
+	  kitten.greyScaleWithColorPop(100, 225, 140);
+	  kitten.explore();
+  }
+  
   /** Main method for testing.  Every class can have a main
     * method in Java */
   public static void main(String[] args)
@@ -211,7 +219,8 @@ public class PictureTester
     //testChromakey();
     //testSortColors();
     //testColorShift();
-	  testSetColumnToAverageColor();
+	  //testSetColumnToAverageColor();
+	  testGreyScaleWithColorPop();
 	//testAverageColors();
     //testGrayscale();
     //testFixUnderwater();
