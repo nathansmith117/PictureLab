@@ -214,7 +214,7 @@ public class PictureTester
 	//testKeepOnlyGreen();
 	//testMirrorDiagonal();
 	//testNegate();
-    //testLowerBitDepth();
+    testLowerBitDepth();
     //testEdgeDetectionHighlight();
     //testEdgeDetection();
     //testCaption();
@@ -222,7 +222,7 @@ public class PictureTester
     //testSortColors();
     //testColorShift();
 	//testSetColumnToAverageColor();
-	testGreyScaleWithColorPop();
+	//testGreyScaleWithColorPop();
 	//testAverageColors();
     //testGrayscale();
     //testFixUnderwater();
