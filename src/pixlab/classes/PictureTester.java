@@ -169,6 +169,22 @@ public class PictureTester
     swan.explore();
   }
   
+  public static void testSetColumnToAverageColor()
+  {
+	  Picture gorge = new Picture("gorge.jpg");
+	  gorge.explore();
+	  
+	  // Set lots of rows to there average color.
+	  for (int col = 0; col < gorge.getWidth(); col += 10)
+	  {
+		  gorge.setColumnToAverageColor(col);
+		  gorge.setColumnToAverageColor(col + 1);
+		  gorge.setColumnToAverageColor(col + 2);
+	  }
+	  
+	  gorge.explore();
+  }
+  
   /** Main method for testing.  Every class can have a main
     * method in Java */
   public static void main(String[] args)
@@ -176,26 +192,27 @@ public class PictureTester
     // uncomment a call here to run a test
     // and comment out the ones you don't want
     // to run
-    //testZeroBlue();
-    //testZeroRed();
-    //testZeroGreen();
+	//testZeroBlue();
+	//testZeroRed();
+	//testZeroGreen();
 	//testKeepOnlyBlue();
 	//testKeepOnlyRed();
 	//testKeepOnlyGreen();
 	//testClearBlueOverValue();
-    //testKeepOnlyBlue();
-    //testKeepOnlyRed();
-    //testKeepOnlyGreen();
+	//testKeepOnlyBlue();
+	//testKeepOnlyRed();
+	//testKeepOnlyGreen();
 	//testMirrorDiagonal();
-    //testNegate();
-	  //testLowerBitDepth();
-	  //testEdgeDetectionHighlight();
-	  //testEdgeDetection();
-	  //testCaption();
-	  //testChromakey();
-	  testSortColors();
-	  //testColorShift();
-	  //testAverageColors();
+	//testNegate();
+    //testLowerBitDepth();
+    //testEdgeDetectionHighlight();
+    //testEdgeDetection();
+    //testCaption();
+    //testChromakey();
+    //testSortColors();
+    //testColorShift();
+	  testSetColumnToAverageColor();
+	//testAverageColors();
     //testGrayscale();
     //testFixUnderwater();
     //testMirrorVertical();

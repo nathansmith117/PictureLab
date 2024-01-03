@@ -401,6 +401,35 @@ public class Picture extends SimplePicture
 	  }
   }
   
+  public void setColumnToAverageColor(int column)
+  {
+	  Pixel[][] pixels = this.getPixels2D();
+	  
+	  int red = 0;
+	  int green = 0;
+	  int blue = 0;
+	  
+	  // Get average color.
+	  for (Pixel[] row : pixels)
+	  {
+		  Color color = row[column].getColor();
+		  
+		  red += color.getRed();
+		  green += color.getGreen();
+		  blue += color.getBlue();
+	  }
+	  
+	  red /= pixels.length;
+	  green /= pixels.length;
+	  blue /= pixels.length;
+	  
+	  // Set each pixel.
+	  for (Pixel[] row : pixels)
+	  {
+		  row[column].setColor(new Color(red, green, blue));
+	  }
+  }
+  
   /** Method that mirrors the picture around a 
     * vertical mirror in the center of the picture
     * from left to right */
