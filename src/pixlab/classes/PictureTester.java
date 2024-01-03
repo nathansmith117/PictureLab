@@ -210,9 +210,9 @@ public class PictureTester
 	//testKeepOnlyBlue();
 	//testKeepOnlyRed();
 	//testKeepOnlyGreen();
-	//testMirrorDiagonal();
+	testMirrorDiagonal();
 	//testNegate();
-    testLowerBitDepth();
+    //testLowerBitDepth();
     //testEdgeDetectionHighlight();
     //testEdgeDetection();
     //testCaption();

@@ -165,14 +165,18 @@ public class Picture extends SimplePicture
 	  
 	  for (int row = 0; row < pixels.length; row++)
 	  {
-		  for (int col = 0; col < row; col++)
+		  for (int col = 0; col < Math.hypot(pixels[0].length, pixels.length) / pixels.length * row; col++)
 		  {
+			  if (col >= pixels[0].length)
+			  {
+				  continue;
+			  }
 			  
 			  Pixel upperPixel = pixels[row][col];
 			  Pixel lowerPixel = pixels[pixels.length - 1 - row][pixels[0].length - 1 - col];
 			  lowerPixel.setColor(upperPixel.getColor());
-			  lowerPixel.setColor(Color.black);
-			  upperPixel.setColor(Color.blue);
+			  //lowerPixel.setColor(Color.black);
+			  //upperPixel.setColor(Color.blue);
 		  }
 	  }
   }
