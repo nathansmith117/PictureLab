@@ -471,6 +471,41 @@ public class Picture extends SimplePicture
     } 
   }
   
+  public int findMinimum(String color)
+  {
+	  int amount = Integer.MAX_VALUE;
+	  
+	  for (Pixel[] row : this.getPixels2D())
+	  {
+		  for (Pixel pixel : row)
+		  {
+			  if (color.equalsIgnoreCase("red"))
+			  {
+				  if (amount > pixel.getRed())
+				  {
+					  amount = pixel.getRed();
+				  }
+			  }
+			  else if (color.equalsIgnoreCase("green"))
+			  {
+				  if (amount > pixel.getGreen())
+				  {
+					  amount = pixel.getGreen();
+				  }
+			  }
+			  else if (color.equalsIgnoreCase("blue"))
+			  {
+				  if (amount > pixel.getBlue())
+				  {
+					  amount = pixel.getBlue();
+				  }
+			  }
+		  }
+	  }
+	  
+	  return amount;
+  }
+  
   /** Mirror just part of a picture of a temple */
   public void mirrorTemple()
   {
