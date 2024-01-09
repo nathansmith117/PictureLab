@@ -238,6 +238,32 @@ public class Picture extends SimplePicture
 	  }
   }
   
+  public void blocky(int scale)
+  {
+	  Pixel[][] pixels = this.getPixels2D();
+	  
+	  for (int row = 0; row < pixels.length - (scale - 1); row += scale)
+	  {
+		  for (int col = 0; col < pixels[0].length - (scale - 1); col += scale)
+		  {
+			  Color color = pixels[row][col].getColor();
+			  
+			  for (int y = 0; y < scale; y++)
+			  {
+				  for (int x = 0; x < scale; x++)
+				  {
+					  if (x == 0 && y == 0)
+					  {
+						  continue;
+					  }
+					  
+					  pixels[row + y][col + x].setColor(color);
+				  }
+			  }
+		  }
+	  }
+  }
+  
   public void edgeDetectionHighlight(int edgeDist, int sampleSize, Color highlightColor)
   {
 	 

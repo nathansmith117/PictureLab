@@ -203,6 +203,14 @@ public class PictureTester
 	  lion.explore();
   }
   
+  public static void testBlocky()
+  {
+	  Picture koala = new Picture("koala.jpg");
+	  koala.explore();
+	  koala.blocky(3);
+	  koala.explore();
+  }
+  
   /** Main method for testing.  Every class can have a main
     * method in Java */
   public static void main(String[] args)
@@ -223,7 +231,8 @@ public class PictureTester
 	//testMirrorDiagonal();
 	//testNegate();
     //testLowerBitDepth();
-    testHighContrast();
+    //testHighContrast();
+	testBlocky();
     //testEdgeDetectionHighlight();
     //testEdgeDetection();
     //testCaption();
