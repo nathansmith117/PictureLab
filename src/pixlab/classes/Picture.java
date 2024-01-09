@@ -206,6 +206,38 @@ public class Picture extends SimplePicture
 	  }
   }
   
+  public void highContrast()
+  {
+	  Pixel[][] pixels = this.getPixels2D();
+	  double colorAverage = 0.0;
+	  
+	  // Get average color magnitude.
+	  for (Pixel[] row : pixels)
+	  {
+		  for (Pixel pixel : row)
+		  {
+			  colorAverage += pixel.getColorMagnitude();
+		  }
+	  }
+	  
+	  colorAverage /= pixels.length * pixels[0].length;
+	  
+	  for (Pixel[] row : pixels)
+	  {
+		  for (Pixel pixel : row)
+		  {
+			  if (pixel.getColorMagnitude() >= colorAverage)
+			  {
+				  pixel.setColor(Color.white);
+			  }
+			  else
+			  {
+				  pixel.setColor(Color.black);
+			  }
+		  }
+	  }
+  }
+  
   public void edgeDetectionHighlight(int edgeDist, int sampleSize, Color highlightColor)
   {
 	 

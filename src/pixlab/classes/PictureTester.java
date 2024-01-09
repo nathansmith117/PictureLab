@@ -195,6 +195,14 @@ public class PictureTester
 	  kitten.explore();
   }
   
+  public static void testHighContrast()
+  {
+	  Picture lion = new Picture("femaleLionAndHall.jpg");
+	  lion.explore();
+	  lion.highContrast();
+	  lion.explore();
+  }
+  
   /** Main method for testing.  Every class can have a main
     * method in Java */
   public static void main(String[] args)
@@ -214,7 +222,8 @@ public class PictureTester
 	//testKeepOnlyGreen();
 	//testMirrorDiagonal();
 	//testNegate();
-    testLowerBitDepth();
+    //testLowerBitDepth();
+    testHighContrast();
     //testEdgeDetectionHighlight();
     //testEdgeDetection();
     //testCaption();
